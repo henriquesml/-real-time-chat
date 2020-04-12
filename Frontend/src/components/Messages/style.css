@@ -1,0 +1,7 @@
+.scroll {
+  overflow: auto;
+  flex: auto;
+  height: 100%;
+
+  scrollbar-color: dark;
+}
