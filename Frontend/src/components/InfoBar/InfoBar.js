@@ -1,20 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MdChatBubble } from 'react-icons/md'
+import { PeopleList, Scroll } from './styles'
 import onlineIcon from '../../icons/onlineIcon.png';
-import closeIcon from '../../icons/closeIcon.png';
 
 import './InfoBar.css';
+export default function InfoBar({ room, users }) {
+  const [visible, setVisible] = useState(false)
 
-const InfoBar = ({ room }) => (
+  return (
   <div className="infoBar">
     <div className="leftInnerContainer">
       <MdChatBubble className="onlineIcon" size={25} color='#FFF' />
       <h3>Sala {room}</h3>
     </div>
     <div className="rightInnerContainer">
+      <button className="peoplesOnline" onClick={() => {setVisible(!visible)}} >Pessoas Online</button>
+      <PeopleList visible={visible}>
+        <Scroll>
+          {
+              users
+              ? (
+                <div>
+                  <h1>Pessoas Online:</h1>
+                  <div className='peopleDiv'>
+                  <img alt="Online Icon" src={onlineIcon}/>
+                    <h2>
+                      {users.map(({name}) => (
+                        name
+                      ))}
+                    </h2>
+                  </div>
+                  
+                </div>
+              )
+              : null
+          }
+      </Scroll>
+      </PeopleList>
       <a className="sair" href="/">Sair</a>
     </div>
-  </div>
-);
+  </div>)
+};
 
-export default InfoBar;
