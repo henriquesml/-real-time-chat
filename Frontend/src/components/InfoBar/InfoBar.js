@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MdChatBubble } from 'react-icons/md'
+import { MdChatBubble, MdExitToApp } from 'react-icons/md'
 import { PeopleList, Scroll } from './styles'
 import onlineIcon from '../../icons/onlineIcon.png';
 
@@ -36,7 +36,7 @@ export default function InfoBar({ room, users }) {
           }
       </Scroll>
       </PeopleList>
-      <a className="sair" href="/">Sair</a>
+      <a className="sair" href="/"><MdExitToApp size={25} color='#FFF' /></a>
     </div>
   </div>)
 };
