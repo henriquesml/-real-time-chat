@@ -11,6 +11,7 @@ export const PeopleList = styled.div`
   padding: 15px 5px;
   display: ${props => (props.visible ? 'flex' : 'none')};
   padding: 10px 30px;
+  flex-direction: column;
 
   &::before {
     content: '';

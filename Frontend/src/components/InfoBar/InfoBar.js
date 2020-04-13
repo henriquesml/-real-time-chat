@@ -22,15 +22,14 @@ export default function InfoBar({ room, users }) {
               ? (
                 <div>
                   <h1>Pessoas Online:</h1>
-                  <div className='peopleDiv'>
-                  <img alt="Online Icon" src={onlineIcon}/>
-                    <h2>
-                      {users.map(({name}) => (
-                        name
-                      ))}
-                    </h2>
-                  </div>
-                  
+                    {users.map(({name}) => (
+                      <div className='peopleDiv'>
+                        <img alt="Online Icon" src={onlineIcon}/>
+                        <h2>
+                          {name}
+                        </h2>
+                      </div>
+                    ))}
                 </div>
               )
               : null
