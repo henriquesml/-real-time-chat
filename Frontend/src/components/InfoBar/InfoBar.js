@@ -14,7 +14,7 @@ export default function InfoBar({ room, users }) {
       <h3>Sala {room}</h3>
     </div>
     <div className="rightInnerContainer">
-      <button className="peoplesOnline" onClick={() => {setVisible(!visible)}} >Pessoas Online</button>
+      <button className="peoplesOnline" onBlur={(e) => setVisible(false)} onClick={() => setVisible(!visible)} >Pessoas Online</button>
       <PeopleList visible={visible}>
         <Scroll>
           {
