@@ -33,10 +33,11 @@ export const PeopleList = styled.div`
 
   h1 {
     color: #fff;
-    font-size: 20px;    
+    font-size: 18px;
   }
   h2 {
     color: #FFF;
+    font-size: 14px;
   }
 
   img {

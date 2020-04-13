@@ -20,10 +20,10 @@ export default function InfoBar({ room, users }) {
           {
               users
               ? (
-                <div>
+                <div >
                   <h1>Pessoas Online:</h1>
                     {users.map(({name}) => (
-                      <div className='peopleDiv'>
+                      <div key={name} className='peopleDiv'>
                         <img alt="Online Icon" src={onlineIcon}/>
                         <h2>
                           {name}
@@ -32,7 +32,7 @@ export default function InfoBar({ room, users }) {
                     ))}
                 </div>
               )
-              : null
+              : <div/>
           }
       </Scroll>
       </PeopleList>
